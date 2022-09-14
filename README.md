@@ -1,5 +1,6 @@
 # Story Tracker Demo Project
 This demo project includes external libraries like Tailwind CSS, Pinia and HeadlessUI. You can see how they can be integrated to brand new Nuxt 3 project.
+Actually you can use this project as a starter.
 
 ## Setup
 

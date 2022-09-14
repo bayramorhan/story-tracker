@@ -1,4 +1,6 @@
 <script setup>
+import pkg from "@/package.json";
+
 definePageMeta({
   layout: "default",
 });
@@ -6,6 +8,7 @@ definePageMeta({
 
 <template>
   <div>
+    <Title>Story Tracker v{{ pkg.version }}</Title>
     <header>
       <h1 class="font-bold leading-tight tracking-tight text-gray-900">
         New User Story

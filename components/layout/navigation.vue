@@ -1,3 +1,7 @@
+<script setup>
+import pkg from "@/package.json";
+</script>
+
 <template>
   <div as="nav" class="bg-white shadow-sm">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -15,6 +19,7 @@
               alt="Your Company"
             />
             <span class="block ml-2 font-bold">storytracker</span>
+            <span class="pl-2 text-xs">v{{ pkg.version }}</span>
           </div>
         </div>
       </div>

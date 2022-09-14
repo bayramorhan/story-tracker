@@ -9,6 +9,7 @@ module.exports = {
       "./pages/**/*.vue",
       "./app.vue",
       "./plugins/**/*.{js,ts}",
+      "./server/**/*.{js, ts}"
     ],
   },
   theme: {

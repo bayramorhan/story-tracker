@@ -85,23 +85,7 @@ const removeAll = async () => {
 };
 
 // Priorities
-const priorities = [
-  {
-    id: 0,
-    title: "Nice to Have",
-    color: "bg-teal-600 ring-teal-600",
-  },
-  {
-    id: 1,
-    title: "Should Have",
-    color: "bg-amber-600 ring-amber-600",
-  },
-  {
-    id: 2,
-    title: "Must Have",
-    color: "bg-red-600 ring-red-600",
-  },
-];
+const { data: priorities } = await useFetch("/api/priorities");
 </script>
 
 <template>
@@ -233,6 +217,7 @@ const priorities = [
                           class="whitespace-nowrap py-5 text-xs w-44 flex items-center space-x-2.5"
                         >
                           <div
+                            v-if="priorities"
                             class="w-2 h-2 rounded-full ring-2 ring-offset-1"
                             :class="[
                               priorities.find(

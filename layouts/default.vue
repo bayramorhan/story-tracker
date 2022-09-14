@@ -39,7 +39,9 @@ useHead({
           <span>View on GitHub</span>
         </a>
 
-        <p class="text-xs text-gray-400">©2022 &middot; OB</p>
+        <p class="text-xs text-gray-400">
+          ©2022 &middot; All rights reserved. &middot; OB
+        </p>
       </div>
     </footer>
   </div>

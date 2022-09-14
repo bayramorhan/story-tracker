@@ -9,6 +9,7 @@ const task = reactive<Task>({
 });
 const errors = ref<ValidationError[]>([]);
 const taskStore = useTaskStore();
+const customSelecboxRef = ref();
 
 const submitCallback = () => {
   errors.value = [];
@@ -39,8 +40,13 @@ const submitCallback = () => {
     taskStore.ADD_TASK({ ...task });
     task.description = "";
     task.priority = -1;
+
+    customSelecboxRef.value.selection = null;
   }
 };
+
+// Priorities
+const { data: priorities } = await useFetch("/api/priorities");
 </script>
 
 <template>
@@ -74,24 +80,15 @@ const submitCallback = () => {
         <label for="priority" class="block mb-1.5 text-sm font-medium"
           >Priority</label
         >
-        <select
-          name=""
-          id="priority"
-          class="border rounded w-full text-sm"
-          :class="[
-            errors.length > 0 &&
-            errors.findIndex((item) => item.tag === 'priority') !== -1
-              ? 'border-red-600 text-red-600 focus:border-gray-300 focus:text-gray-700'
-              : 'border-gray-300',
-          ]"
+
+        <custom-selectbox
           v-model="task.priority"
-          @change="errors = errors.filter((item) => item.tag !== 'priority')"
-        >
-          <option :value="-1">Please choose</option>
-          <option :value="0">Nice to Have</option>
-          <option :value="1">Should Have</option>
-          <option :value="2">Must Have</option>
-        </select>
+          :errors="errors"
+          @update:model-value="
+            errors = errors.filter((item) => item.tag !== 'priority')
+          "
+          ref="customSelecboxRef"
+        ></custom-selectbox>
       </div>
       <div>
         <label for="" class="block">&nbsp;</label>

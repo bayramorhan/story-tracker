@@ -20,6 +20,7 @@
     "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.4",
+    "@vueuse/components": "^9.2.0",
     "@vueuse/core": "^9.2.0",
     "cookie": "^0.5.0",
     "js-cookie": "^3.0.1",

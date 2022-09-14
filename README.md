@@ -1,6 +1,5 @@
-# Nuxt 3 Minimal Starter
-
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+# Story Tracker Demo Project
+This demo project includes external libraries like Tailwind CSS, Pinia and HeadlessUI. You can see how they can be integrated to brand new Nuxt 3 project.
 
 ## Setup
 

@@ -47,10 +47,10 @@ const submitCallback = () => {
   <div>
     <form
       action=""
-      class="flex items-center space-x-4"
+      class="flex flex-col md:flex-row items-center md:space-x-4 space-y-2.5 md:space-y-0"
       @submit.prevent="submitCallback"
     >
-      <div class="flex-1">
+      <div class="flex-1 w-full md:w-auto">
         <label for="title" class="block mb-1.5 text-sm font-medium"
           >Story Description</label
         >
@@ -70,7 +70,7 @@ const submitCallback = () => {
           @input="errors = errors.filter((item) => item.tag !== 'description')"
         />
       </div>
-      <div class="w-56">
+      <div class="w-full md:w-56">
         <label for="priority" class="block mb-1.5 text-sm font-medium"
           >Priority</label
         >
